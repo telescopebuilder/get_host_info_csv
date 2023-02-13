@@ -62,7 +62,7 @@
       content: |
         Hostname,Operating System,Release Version,Disk Capacity,Disk Usage,Total Memory,SWAP Memory,IP Address,MAC Address,Java,MySQL,Apache
         {{ hostname_result.stdout }},{{ os_result.stdout }},{{ os_version_result.stdout }},{{ disk_capacity_result.stdout }},{{ disk_usage_result.stdout }},{{ total_memory_result.stdout }} MB,{{ swap_memory_result.stdout }} MB,{{ ip_result.stdout }},{{ mac_result.stdout }},{{ java_result.stdout }},{{ mysql_result.stdout }},{{ apache2_result.stdout }}
-      dest: "/tmp/inventory_information.csv"
+      dest: "/tmp/{{ hostname_result.stdout }}_inventory_information.csv"
 
   - name: Print Information
     debug:
